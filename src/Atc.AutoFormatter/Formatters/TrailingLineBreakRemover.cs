@@ -1,5 +1,4 @@
-﻿using Atc.AutoFormatter.Formatters;
-using Microsoft.VisualStudio.Text;
+﻿using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 
 namespace Atc.AutoFormatter.Formatters
@@ -9,27 +8,27 @@ namespace Atc.AutoFormatter.Formatters
         public void Execute(string documentPath, ITextView textView)
         {
             var snapshot = textView.TextSnapshot;
+            var lastLine = snapshot.LineCount - 1;
+
+            var lastTextLine = lastLine;
+            while (lastTextLine >= 0 && IsEmptyLine(snapshot, lastTextLine))
+                lastTextLine--;
+
+            if (lastTextLine >= lastLine)
+                return;
+
+            var startPosition = snapshot
+                .GetLineFromLineNumber(lastTextLine)
+                .End
+                .Position;
+
+            var endPosition = snapshot
+                .GetLineFromLineNumber(lastLine)
+                .EndIncludingLineBreak
+                .Position;
+
             using (var edit = snapshot.TextBuffer.CreateEdit())
             {
-                var lineNumber = snapshot.LineCount - 1;
-                while (lineNumber >= 0 && IsEmptyLine(snapshot, lineNumber))
-                    lineNumber--;
-
-                var startEmptyLineNumber = lineNumber + 1;
-                if (startEmptyLineNumber > snapshot.LineCount - 1)
-                    return;
-
-                var lastTextLine = snapshot
-                    .GetLineFromLineNumber(startEmptyLineNumber - 1);
-                var startPosition = lastTextLine
-                    .End
-                    .Position;
-
-                var endPosition = snapshot
-                    .GetLineFromLineNumber(snapshot.LineCount - 1)
-                    .EndIncludingLineBreak
-                    .Position;
-
                 edit.Delete(startPosition, endPosition - startPosition);
                 edit.Apply();
             }
