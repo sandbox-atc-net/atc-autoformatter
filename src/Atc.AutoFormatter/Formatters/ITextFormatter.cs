@@ -4,6 +4,6 @@ namespace Atc.AutoFormatter.Formatters
 {
     public interface ITextFormatter
     {
-        void Execute(string documentPath, ITextView textView);
+        void Execute(string filePath, ITextView textView);
     }
 }

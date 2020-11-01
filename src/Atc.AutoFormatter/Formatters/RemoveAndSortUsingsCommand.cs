@@ -15,9 +15,9 @@ namespace Atc.AutoFormatter.Formatters
             this.dte = dte;
         }
 
-        public void Execute(string documentPath, ITextView textView)
+        public void Execute(string filePath, ITextView textView)
         {
-            if (!IsCsFile(documentPath))
+            if (!IsCsFile(filePath))
                 return;
 
             if (HasIfCompilerDirective(textView))

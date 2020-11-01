@@ -5,7 +5,7 @@ namespace Atc.AutoFormatter.Formatters
 {
     public class TrailingLineBreakRemover : ITextFormatter
     {
-        public void Execute(string documentPath, ITextView textView)
+        public void Execute(string filePath, ITextView textView)
         {
             var snapshot = textView.TextSnapshot;
             var lastLine = snapshot.LineCount - 1;
