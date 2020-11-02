@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Formatters\RemoveAndSortUsingsCommandTests.cs" />
+    <Compile Include="Formatters\TrailingLineBreakRemoverTests.cs" />
     <Compile Include="Services\DocumentEventHandlerTests.cs" />
     <Compile Include="Services\DocumentFormatterTests.cs" />
     <Compile Include="Services\DocumentLocatorTests.cs" />
