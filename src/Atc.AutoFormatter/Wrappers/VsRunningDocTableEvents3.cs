@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
 
-namespace Atc.AutoFormatter.Services
+namespace Atc.AutoFormatter.Wrappers
 {
     public abstract class VsRunningDocTableEvents3 : IVsRunningDocTableEvents3
     {

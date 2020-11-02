@@ -62,7 +62,11 @@
     <Compile Include="Services\UndoProvider.cs" />
     <Compile Include="Services\VsTextViewExtensions.cs" />
     <Compile Include="Services\DocumentEventHandler.cs" />
-    <Compile Include="Services\VsRunningDocTableEvents3.cs" />
+    <Compile Include="Wrappers\IRunningDocumentTable.cs" />
+    <Compile Include="Wrappers\IThreadHelper.cs" />
+    <Compile Include="Wrappers\RunningDocumentTableWrapper.cs" />
+    <Compile Include="Wrappers\ThreadHelperWrapper.cs" />
+    <Compile Include="Wrappers\VsRunningDocTableEvents3.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="License.txt">

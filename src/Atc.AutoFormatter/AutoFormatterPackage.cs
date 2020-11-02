@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Atc.AutoFormatter.Formatters;
 using Atc.AutoFormatter.Services;
+using Atc.AutoFormatter.Wrappers;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
@@ -27,7 +28,8 @@ namespace Atc.AutoFormatter
                 return;
             }
 
-            var runningDocumentTable = new RunningDocumentTable(this);
+            var runningDocumentTable = new RunningDocumentTableWrapper(
+                new RunningDocumentTable(this));
 
             var textFormatters = new ITextFormatter[]
             {
@@ -36,7 +38,12 @@ namespace Atc.AutoFormatter
                 new TrailingLineBreakRemover(),
             };
 
-            var documentLocator = new DocumentLocator(dte, runningDocumentTable);
+            var threadHelper = new ThreadHelperWrapper();
+            var documentLocator = new DocumentLocator(
+                dte,
+                runningDocumentTable,
+                threadHelper);
+
             var documentFormatter = new DocumentFormatter(
                 dte,
                 new VsTextViewProvider(this),

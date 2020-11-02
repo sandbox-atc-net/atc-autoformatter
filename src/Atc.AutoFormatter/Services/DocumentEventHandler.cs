@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio;
+﻿using Atc.AutoFormatter.Wrappers;
+using Microsoft.VisualStudio;
 
 namespace Atc.AutoFormatter.Services
 {
