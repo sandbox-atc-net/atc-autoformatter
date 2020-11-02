@@ -12,10 +12,14 @@ namespace Atc.AutoFormatter.Formatters
 
             var lastTextLine = lastLine;
             while (lastTextLine >= 0 && IsEmptyLine(snapshot, lastTextLine))
+            {
                 lastTextLine--;
+            }
 
             if (lastTextLine >= lastLine)
+            {
                 return;
+            }
 
             var startPosition = snapshot
                 .GetLineFromLineNumber(lastTextLine)
@@ -35,10 +39,9 @@ namespace Atc.AutoFormatter.Formatters
         }
 
         private static bool IsEmptyLine(ITextSnapshot snapshot, int lineNumber)
-            => snapshot
+            => string.IsNullOrEmpty(snapshot
                 .GetLineFromLineNumber(lineNumber)
                 .GetText()
-                .Trim()
-            == string.Empty;
+                .Trim());
     }
 }

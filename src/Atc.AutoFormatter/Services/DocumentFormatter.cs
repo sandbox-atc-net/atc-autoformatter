@@ -31,7 +31,9 @@ namespace Atc.AutoFormatter.Services
             ThreadHelper.ThrowIfNotOnUIThread();
 
             if (!IsTextDocument(document))
+            {
                 return;
+            }
 
             var oldActiveDocument = dte.ActiveDocument;
             document.Activate();
@@ -40,11 +42,15 @@ namespace Atc.AutoFormatter.Services
             {
                 var vsTextView = textViewProvider.GetVsTextView(document.FullName);
                 if (vsTextView == null)
+                {
                     return;
+                }
 
                 var textView = vsTextView.GetTextView();
                 if (textView == null)
+                {
                     return;
+                }
 
                 using (var undo = undoProvider.StartTransaction(textView))
                 {
@@ -55,7 +61,7 @@ namespace Atc.AutoFormatter.Services
                     {
                         formatter.Execute(document.FullName, textView);
                     }
-                    
+
                     vsTextView.GetCaretPos(out var newCaretLine, out var newCaretColumn);
                     vsTextView.SetCaretPos(newCaretLine, oldCaretColumn);
 

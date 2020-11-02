@@ -1,9 +1,10 @@
-﻿using Microsoft.VisualStudio.TextManager.Interop;
+﻿#nullable enable
+using Microsoft.VisualStudio.TextManager.Interop;
 
 namespace Atc.AutoFormatter.Services
 {
     public interface IVsTextViewProvider
     {
-        IVsTextView GetVsTextView(string filePath);
+        IVsTextView? GetVsTextView(string filePath);
     }
 }

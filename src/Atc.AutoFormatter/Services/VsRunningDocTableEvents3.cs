@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 
 namespace Atc.AutoFormatter.Services
 {
-    public class VsRunningDocTableEvents3 : IVsRunningDocTableEvents3
+    public abstract class VsRunningDocTableEvents3 : IVsRunningDocTableEvents3
     {
         public virtual int OnAfterFirstDocumentLock(uint docCookie, uint dwRDTLockType, uint dwReadLocksRemaining, uint dwEditLocksRemaining)
             => VSConstants.S_OK;

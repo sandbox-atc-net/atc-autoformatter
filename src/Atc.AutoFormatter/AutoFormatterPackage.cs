@@ -22,24 +22,30 @@ namespace Atc.AutoFormatter
             IProgress<ServiceProgressData> progress)
         {
             var dte = await GetServiceAsync(typeof(SDTE)) as DTE2;
+            if (dte is null)
+            {
+                return;
+            }
+
             var runningDocumentTable = new RunningDocumentTable(this);
 
-            var locator = new DocumentLocator(dte, runningDocumentTable);
-            var formatter = new DocumentFormatter(
+            var textFormatters = new ITextFormatter[]
+            {
+                new RemoveAndSortUsingsCommand(dte),
+                new TrailingWhiteSpaceRemover(),
+                new TrailingLineBreakRemover(),
+            };
+
+            var documentLocator = new DocumentLocator(dte, runningDocumentTable);
+            var documentFormatter = new DocumentFormatter(
                 dte,
                 new VsTextViewProvider(this),
                 new UndoProvider(),
-                new ITextFormatter[]
-                {
-                    new RemoveAndSortUsingsCommand(dte),
-                    new TrailingWhiteSpaceRemover(),
-                    new TrailingLineBreakRemover(),
-                });
-
+                textFormatters);
 
             var eventHandler = new DocumentEventHandler(
-                locator,
-                formatter);
+                documentLocator,
+                documentFormatter);
 
             runningDocumentTable.Advise(eventHandler);
         }

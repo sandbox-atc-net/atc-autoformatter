@@ -1,4 +1,5 @@
-﻿using EnvDTE;
+﻿#nullable enable
+using EnvDTE;
 using EnvDTE80;
 using Microsoft.VisualStudio.Shell;
 
@@ -17,7 +18,7 @@ namespace Atc.AutoFormatter.Services
             this.documentTable = documentTable;
         }
 
-        public Document FindDocument(uint docCookie)
+        public Document? FindDocument(uint docCookie)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 

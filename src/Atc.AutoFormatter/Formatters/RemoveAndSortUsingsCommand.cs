@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using Atc.AutoFormatter.Formatters;
 using EnvDTE80;
 using Microsoft.VisualStudio.Text.Editor;
 
@@ -18,10 +17,14 @@ namespace Atc.AutoFormatter.Formatters
         public void Execute(string filePath, ITextView textView)
         {
             if (!IsCsFile(filePath))
+            {
                 return;
+            }
 
             if (HasIfCompilerDirective(textView))
+            {
                 return;
+            }
 
             ExecuteCommand("Edit.RemoveAndSort");
         }
@@ -34,6 +37,7 @@ namespace Atc.AutoFormatter.Formatters
             }
             catch (COMException)
             {
+                // Ignore
             }
         }
 

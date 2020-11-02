@@ -17,7 +17,9 @@ namespace Atc.AutoFormatter.Formatters
 
                     var trimmedLength = lineText.TrimEnd().Length;
                     if (trimmedLength == lineText.Length)
+                    {
                         continue;
+                    }
 
                     var spaceLength = lineText.Length - trimmedLength;
                     var endPosition = line.End.Position;
@@ -26,7 +28,9 @@ namespace Atc.AutoFormatter.Formatters
                 }
 
                 if (hasModified)
-                    edit.Apply();
+                {
+                    _ = edit.Apply();
+                }
             }
         }
     }

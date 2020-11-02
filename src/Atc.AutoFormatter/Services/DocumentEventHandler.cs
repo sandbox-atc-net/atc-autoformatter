@@ -1,5 +1,4 @@
-﻿using Atc.AutoFormatter.Services;
-using Microsoft.VisualStudio;
+﻿using Microsoft.VisualStudio;
 
 namespace Atc.AutoFormatter.Services
 {
@@ -20,7 +19,9 @@ namespace Atc.AutoFormatter.Services
         {
             var document = locator.FindDocument(docCookie);
             if (document != null)
+            {
                 formatter.Format(document);
+            }
 
             return VSConstants.S_OK;
         }

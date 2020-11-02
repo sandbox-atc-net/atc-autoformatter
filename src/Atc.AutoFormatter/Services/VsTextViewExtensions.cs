@@ -6,11 +6,13 @@ namespace Atc.AutoFormatter.Services
 {
     public static class VsTextViewExtensions
     {
-        public static ITextView GetTextView(this IVsTextView textView)
+        public static ITextView? GetTextView(this IVsTextView textView)
         {
             var userData = textView as IVsUserData;
             if (userData == null)
+            {
                 return null;
+            }
 
             var guidViewHost = DefGuidList.guidIWpfTextViewHost;
             userData.GetData(ref guidViewHost, out var holder);
