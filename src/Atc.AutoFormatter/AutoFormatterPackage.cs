@@ -48,6 +48,7 @@ namespace Atc.AutoFormatter
                 dte,
                 new VsTextViewProvider(this),
                 new UndoProvider(),
+                threadHelper,
                 textFormatters);
 
             var eventHandler = new DocumentEventHandler(

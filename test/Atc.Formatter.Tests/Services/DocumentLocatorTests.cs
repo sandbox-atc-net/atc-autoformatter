@@ -19,7 +19,7 @@ namespace Atc.Formatter.Tests.Services
     public class DocumentLocatorTests
     {
         [Theory, AutoNSubstituteData]
-        public void FindDocuemnt_Will_ThrowIfNotOnUIThread(
+        public void FindDocument_Will_ThrowIfNotOnUIThread(
             [Frozen] IThreadHelper threadHelper,
             DocumentLocator sut,
             uint docCookie)

@@ -1,34 +1,41 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Atc.AutoFormatter.Formatters;
+using Atc.AutoFormatter.Wrappers;
 using EnvDTE;
 using EnvDTE80;
-using Microsoft.VisualStudio.Shell;
 
 namespace Atc.AutoFormatter.Services
 {
+    [SuppressMessage(
+        "Usage",
+        "VSTHRD010:Invoke single-threaded types on Main thread",
+        Justification = "Handled through IThreadHelper")]
     public class DocumentFormatter : IDocumentFormatter
     {
         private readonly DTE2 dte;
         private readonly IVsTextViewProvider textViewProvider;
         private readonly IUndoProvider undoProvider;
+        private readonly IThreadHelper threadHelper;
         private readonly IEnumerable<ITextFormatter> formatters;
 
         public DocumentFormatter(
             DTE2 dte,
             IVsTextViewProvider textViewProvider,
             IUndoProvider undoProvider,
+            IThreadHelper threadHelper,
             IEnumerable<ITextFormatter> formatters)
         {
             this.dte = dte;
             this.textViewProvider = textViewProvider;
             this.undoProvider = undoProvider;
+            this.threadHelper = threadHelper;
             this.formatters = formatters;
         }
 
         public void Format(Document document)
         {
-            ThreadHelper.ThrowIfNotOnUIThread();
+            threadHelper.ThrowIfNotOnUIThread();
 
             if (!IsTextDocument(document))
             {
@@ -74,10 +81,6 @@ namespace Atc.AutoFormatter.Services
             }
         }
 
-        [SuppressMessage(
-            "Usage",
-            "VSTHRD010:Invoke single-threaded types on Main thread",
-            Justification = "Only called from main thread")]
         private bool IsTextDocument(Document document)
             => document?.Type == "Text"
             && document?.Language != null
