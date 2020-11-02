@@ -1,5 +1,5 @@
 ﻿using Atc.AutoFormatter.Services;
-using Atc.AutoFormatter.Tests.TestInfrastructure;
+using Atc.Formatter.Tests.TestInfrastructure;
 using AutoFixture.Xunit2;
 using EnvDTE;
 using NSubstitute;

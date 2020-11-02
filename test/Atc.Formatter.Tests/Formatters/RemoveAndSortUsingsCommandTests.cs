@@ -1,5 +1,5 @@
 ﻿using Atc.AutoFormatter.Formatters;
-using Atc.AutoFormatter.Tests.TestInfrastructure;
+using Atc.Formatter.Tests.TestInfrastructure;
 using AutoFixture.Xunit2;
 using EnvDTE80;
 using Microsoft.VisualStudio.Text;
@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.Text.Editor;
 using NSubstitute;
 using Xunit;
 
-namespace Atc.AutoFormatter.Tests
+namespace Atc.Formatter.Tests.Formatters
 {
     public class RemoveAndSortUsingsCommandTests
     {

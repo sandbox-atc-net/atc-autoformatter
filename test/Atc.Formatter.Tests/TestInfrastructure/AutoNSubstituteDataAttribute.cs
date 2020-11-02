@@ -2,7 +2,7 @@
 using AutoFixture.AutoNSubstitute;
 using AutoFixture.Xunit2;
 
-namespace Atc.AutoFormatter.Tests.TestInfrastructure
+namespace Atc.Formatter.Tests.TestInfrastructure
 {
     public class AutoNSubstituteDataAttribute : AutoDataAttribute
     {

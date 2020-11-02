@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Atc.AutoFormatter.Formatters;
 using Atc.AutoFormatter.Services;
-using Atc.AutoFormatter.Tests.TestInfrastructure;
 using Atc.AutoFormatter.Wrappers;
+using Atc.Formatter.Tests.TestInfrastructure;
 using AutoFixture;
 using AutoFixture.AutoNSubstitute;
 using EnvDTE;

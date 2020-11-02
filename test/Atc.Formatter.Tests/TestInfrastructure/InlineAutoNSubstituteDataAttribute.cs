@@ -1,6 +1,6 @@
 ﻿using AutoFixture.Xunit2;
 
-namespace Atc.AutoFormatter.Tests.TestInfrastructure
+namespace Atc.Formatter.Tests.TestInfrastructure
 {
     public class InlineAutoNSubstituteDataAttribute : InlineAutoDataAttribute
     {
