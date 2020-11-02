@@ -44,6 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Formatters\RemoveAndSortUsingsCommandTests.cs" />
+    <Compile Include="Services\DocumentEventHandlerTests.cs" />
+    <Compile Include="Services\DocumentLocatorTests.cs" />
     <Compile Include="TestInfrastructure\AutoNSubstituteDataAttribute.cs" />
     <Compile Include="TestInfrastructure\InlineAutoNSubstituteDataAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

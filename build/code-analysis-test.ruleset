@@ -120,7 +120,7 @@
     <Rule Id="S1481" Action="Warning" />
     <Rule Id="S1125" Action="Warning" />
     <Rule Id="S108" Action="Warning" />
-    <Rule Id="S107" Action="Warning" />
+    <Rule Id="S107" Action="None" />
     <Rule Id="S101" Action="Warning" />
     <Rule Id="S2486" Action="Warning" />
     <Rule Id="S2743" Action="Warning" />
