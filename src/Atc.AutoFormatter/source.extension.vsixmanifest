@@ -3,12 +3,7 @@
     <Metadata>
         <Identity Id="Atc.AutoFormatter.89e28230-59c7-422e-b94f-3b1552ec7ffa" Version="1.0" Language="en-US" Publisher="Ricky Kaare Engelharth" />
         <DisplayName>Atc AutoFormatter</DisplayName>
-        <Description xml:space="preserve">An extension for formatting code files automatically accordning to the ATC team code style. 
-
-The formatter will apply the following actions on document save:
-* Remove any trailing line-breaks in the file
-* Remove any trailing white-space on lines in the file
-* Remove and sort using statements unless the file contains #if directives</Description>
+        <Description xml:space="preserve">An extension for formatting code files automatically accordning to the ATC team code style.</Description>
         <License>License.txt</License>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Logo.png</PreviewImage>
