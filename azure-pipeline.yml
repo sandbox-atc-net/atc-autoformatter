@@ -34,8 +34,19 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish build artifacts'
+- task: CopyFiles@2
+  displayName: 'Copy artifacts'
   inputs:
-    pathtoPublish: src\Atc.AutoFormatter\bin\$(buildConfiguration)
+    contents: |
+      **/*.vsix
+      publish-manifest.json
+      README.md
+      src/Atc.AutoFormatter/Resources/*.png
+    targetFolder: $(Build.ArtifactStagingDirectory)
+    flattenFolders: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish artifacts'
+  inputs:
+    pathtoPublish: $(Build.ArtifactStagingDirectory)
     artifactName: drop
