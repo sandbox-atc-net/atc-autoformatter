@@ -4,6 +4,8 @@ trigger:
 pool:
   vmImage: 'windows-2019'
 
+name: 1.0.$(Build.BuildId)
+
 variables:
   solution: '*.sln'
   buildPlatform: 'Any CPU'
@@ -20,6 +22,12 @@ steps:
   inputs:
     command: 'restore'
     restoreSolution: '$(solution)'
+
+- task: VsixToolsUpdateVersion@2
+  displayName: 'Set Vsix Version'
+  inputs:
+    FileName: src/Atc.AutoFormatter/source.extension.vsixmanifest
+    VersionNumber: '$(build.buildnumber)'
 
 - task: VSBuild@1
   displayName: 'Build solution'
