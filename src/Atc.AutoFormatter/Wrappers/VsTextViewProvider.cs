@@ -1,10 +1,12 @@
 ﻿#nullable enable
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.TextManager.Interop;
 
-namespace Atc.AutoFormatter.Services
+namespace Atc.AutoFormatter.Wrappers
 {
+    [ExcludeFromCodeCoverage]
     public class VsTextViewProvider : IVsTextViewProvider
     {
         private readonly IServiceProvider serviceProvider;

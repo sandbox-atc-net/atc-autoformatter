@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Operations;
 
-namespace Atc.AutoFormatter.Services
+namespace Atc.AutoFormatter.Wrappers
 {
     public interface IUndoProvider
     {

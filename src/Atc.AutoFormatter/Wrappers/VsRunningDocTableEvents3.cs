@@ -1,8 +1,10 @@
-﻿using Microsoft.VisualStudio;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Shell.Interop;
 
 namespace Atc.AutoFormatter.Wrappers
 {
+    [ExcludeFromCodeCoverage]
     public abstract class VsRunningDocTableEvents3 : IVsRunningDocTableEvents3
     {
         public virtual int OnAfterFirstDocumentLock(uint docCookie, uint dwRDTLockType, uint dwReadLocksRemaining, uint dwEditLocksRemaining)

@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.TextManager.Interop;
 
-namespace Atc.AutoFormatter.Services
+namespace Atc.AutoFormatter.Wrappers
 {
     public static class VsTextViewExtensions
     {

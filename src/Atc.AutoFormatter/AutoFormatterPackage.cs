@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Atc.AutoFormatter.Formatters;
@@ -12,8 +13,9 @@ using Task = System.Threading.Tasks.Task;
 namespace Atc.AutoFormatter
 {
     [PackageRegistration(UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-    [Guid(AutoFormatterPackage.PackageGuidString)]
+    [Guid(PackageGuidString)]
     [ProvideAutoLoad(UIContextGuids80.SolutionExists, PackageAutoLoadFlags.BackgroundLoad)]
+    [ExcludeFromCodeCoverage]
     public sealed class AutoFormatterPackage : AsyncPackage
     {
         public const string PackageGuidString = "034df847-828d-4e1f-8b1d-f80d91edf4a0";

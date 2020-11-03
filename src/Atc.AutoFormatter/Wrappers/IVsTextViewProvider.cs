@@ -1,7 +1,7 @@
 ﻿#nullable enable
 using Microsoft.VisualStudio.TextManager.Interop;
 
-namespace Atc.AutoFormatter.Services
+namespace Atc.AutoFormatter.Wrappers
 {
     public interface IVsTextViewProvider
     {

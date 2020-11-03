@@ -1,11 +1,13 @@
 ﻿#nullable enable
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.VisualStudio.ComponentModelHost;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Operations;
 
-namespace Atc.AutoFormatter.Services
+namespace Atc.AutoFormatter.Wrappers
 {
+    [ExcludeFromCodeCoverage]
     public class UndoProvider : IUndoProvider
     {
         public ITextUndoTransaction? StartTransaction(ITextView textView)

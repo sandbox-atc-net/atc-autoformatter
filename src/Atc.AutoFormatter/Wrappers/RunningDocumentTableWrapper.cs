@@ -1,8 +1,10 @@
-﻿using Microsoft.VisualStudio.Shell;
+﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 
 namespace Atc.AutoFormatter.Wrappers
 {
+    [ExcludeFromCodeCoverage]
     public class RunningDocumentTableWrapper : IRunningDocumentTable
     {
         private readonly RunningDocumentTable runningDocumentTable;
