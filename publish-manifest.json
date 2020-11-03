@@ -2,8 +2,8 @@
   "$schema": "http://json.schemastore.org/vsix-publish",
   "categories": [ "coding" ],
   "identity": {
-    "internalName": "ApiClientCodeGenerator",
-    "tags": [ "OpenAPI", "Swagger", "NSwag", "AutoRest", "REST API", "Code Generator" ]
+    "internalName": "AutoFormatter",
+    "tags": [ "Formatting", "line-breaks", "whitespace" ]
   },
   "overview": "README.md",
   "priceCategory": "free",

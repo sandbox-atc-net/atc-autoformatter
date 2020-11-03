@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Atc.AutoFormatter.89e28230-59c7-422e-b94f-3b1552ec7ffa" Version="1.0" Language="en-US" Publisher="ATC.Net" />
+        <Identity Id="Atc.AutoFormatter.89e28230-59c7-422e-b94f-3b1552ec7ffb" Version="1.0" Language="en-US" Publisher="ATC.Net" />
         <DisplayName>Atc AutoFormatter</DisplayName>
         <Description xml:space="preserve">An extension for formatting code files automatically accordning to the ATC team code style.</Description>
         <License>License.txt</License>
