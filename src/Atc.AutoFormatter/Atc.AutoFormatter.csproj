@@ -55,8 +55,10 @@
     <Compile Include="Services\IDocumentLocator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AutoFormatterPackage.cs" />
+    <Compile Include="Wrappers\IRunningDocumentInfo.cs" />
     <Compile Include="Wrappers\IUndoProvider.cs" />
     <Compile Include="Wrappers\IVsTextViewProvider.cs" />
+    <Compile Include="Wrappers\RunningDocumentInfoWrapper.cs" />
     <Compile Include="Wrappers\VsTextViewProvider.cs" />
     <Compile Include="Formatters\TrailingLineBreakRemover.cs" />
     <Compile Include="Wrappers\UndoProvider.cs" />
